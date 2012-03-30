@@ -4,7 +4,7 @@
 		<packagename><![CDATA[Webdisk Recent Activity Box]]></packagename>
 		<packagedescription><![CDATA[]]></packagedescription>
 		<isunique>0</isunique>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 		<date>2011-06-23</date>
 		<plugin>com.woltlab.wbb</plugin>
 	</packageinformation>
@@ -37,6 +37,10 @@
 	<instructions type="update" fromversion="1.0.0">
 		<!-- files -->
 		<templates>templates.tar</templates>
+		<files>files.tar</files>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.1">
 		<files>files.tar</files>
 	</instructions>
 </package>

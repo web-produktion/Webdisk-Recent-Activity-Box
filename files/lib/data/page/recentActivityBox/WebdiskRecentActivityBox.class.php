@@ -9,10 +9,10 @@ require_once(WCF_DIR."lib/data/database/DatabaseFileIdentifier.class.php");
 /**
  * Implementation of RecentActivityBox to show the lastest webdisk uploads.
  * 
- * @author 		Jean-Marc Licht
- * @copyright	2011 web-produktion
- * @license		GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package		com.web-produktion.webdisk.recentActivityBox
+ * @author 	Jean-Marc Licht
+ * @copyright	2011 - 2012 web-produktion
+ * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
+ * @package	com.web-produktion.webdisk.recentActivityBox
  * @subpackage	system.event.listener
  * @category 	Burning Board
  */
@@ -52,14 +52,11 @@ class WebdiskRecentActivityBox implements RecentActivityBox {
 				WHERE		di.itemID IN (".implode(',', $cachedItemIDArray).")
 				GROUP BY	itemID
 				ORDER BY	di.createTime DESC";
-			$result = WCF::getDB()->sendQuery($sql);
+			$result = WCF::getDB()->sendQuery($sql, RECENT_ACTIVITY_BOX_ITEMS);
 			while ($row = WCF::getDB()->fetchArray($result)) {
 				// get webdisk item
-				if(DatabaseStructure::checkAccess($row['itemID'], $row) == true) {
+				if(DatabaseStructure::checkAccess($row['itemID'],$row) == true) {
 					$this->cachedUploads[] = $row;
-					
-					// get new status
-					if ($row['createTime'] > WCF::getUser()->boardLastVisitTime) $this->newItems++;
 				}
 			}
 		}

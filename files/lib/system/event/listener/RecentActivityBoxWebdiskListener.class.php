@@ -9,10 +9,10 @@ require_once(WBB_DIR.'lib/data/page/recentActivityBox/WebdiskRecentActivityBox.c
 /**
  * Shows the lastest uploads in the recent activity box.
  * 
- * @author 		Jean-Marc Licht
- * @copyright	2011 web-produktion
- * @license		GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
- * @package		com.web-produktion.webdisk.recentActivityBox
+ * @author 	Jean-Marc Licht
+ * @copyright	2011 - 2012 web-produktion
+ * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
+ * @package	com.web-produktion.webdisk.recentActivityBox
  * @subpackage	system.event.listener
  * @category 	Burning Board
  */
